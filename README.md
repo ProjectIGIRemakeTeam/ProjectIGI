@@ -1,6 +1,6 @@
 # Quake III Arena
 
-A Quake III Arena port designed for running in vanilla JavaScript pre-ECMAScript 2015 (no WebAssembly). Simply open the link below, click the red icon, and select all the `PK3` files and `q3config.cfg` (optional); all files will be loaded and booted automatically. If you have the commercial version and you want to play it, you need to have the Point Release 1.32 version, this means than you need to have and select at least the following files: `pak0.pk3`,  `pak1.pk3`, `pak2.pk3`, `pak3.pk3` and `pak4.pk3`. The multiplayer mode is not available in this project, for multiplayer check the original project link at the bottom of this document.
+A Quake III Arena port designed for running in vanilla JavaScript pre-ECMAScript 2015 (no WebAssembly). Simply open the link below, click the red icon, and select all the `PK3` files and `q3config.cfg` (optional); all files will be loaded and booted automatically. If you have the commercial version and you want to play it, you need to have the Point Release 1.32 version, this means than you need to have and select at least the following files: `pak0.pk3`, `pak1.pk3`, `pak2.pk3`, `pak3.pk3` and `pak4.pk3`. The multiplayer mode is not available in this project, for multiplayer check the original project link at the bottom of this document.
 
 ![alt screenshot](https://lrusso.github.io/Quake3/Quake3.jpg)
 
@@ -23,17 +23,17 @@ embedQuake3({
 })
 ```
 
-| Parameter          |    Type     | Required | Description               |
-| :----------------- | :---------: | :------: | :------------------------ |
-| container          |   string    |   yes    | Target element ID.        |
-| files              |   Array     |   yes    | Files or Blobs (PK3s and q3config.cfg). |
-| cbStarted          |  function   |    no    | Called on game start. |
+| Parameter |   Type   | Required | Description                             |
+| :-------- | :------: | :------: | :-------------------------------------- |
+| container |  string  |   yes    | Target element ID.                      |
+| files     |  Array   |   yes    | Files or Blobs (PK3s and q3config.cfg). |
+| cbStarted | function |    no    | Called on game start.                   |
 
 ## Special keys:
 
-| Action          | macOS Shortcut | Windows Shortcut | Safari Shortcut |
-| :-------------- | :------------: | :--------------: | :-------------: |
-| Download q3config.cfg      |  Command + P   |     Ctrl + P     |    Ctrl + P     |
+| Action                | macOS Shortcut | Windows Shortcut | Safari Shortcut |
+| :-------------------- | :------------: | :--------------: | :-------------: |
+| Download q3config.cfg |  Command + P   |     Ctrl + P     |    Ctrl + P     |
 
 ## Main differences with the original project:
 
