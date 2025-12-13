@@ -20,42 +20,11 @@ A Quake III Arena port designed for running in vanilla JavaScript pre-ECMAScript
 Examples of loading local and online files can be found [here](https://github.com/lrusso/Genesis/blob/main/Genesis.htm#L138-L186) and [here](https://github.com/lrusso/Genesis/blob/main/Genesis.htm#L214-L256).
 
 ```js
-embedGenesis({
+embedQuake3({
   container: "game",
-  name: "Sonic The Hedgehog",
-  rom: romFile,
-  showMobileControls: true,
-  saveButtonText: "SAVE",
-  loadButtonText: "LOAD",
-  soundButtonText: "SOUND",
-  player1: {
-    up: "ArrowUp",
-    down: "ArrowDown",
-    left: "ArrowLeft",
-    right: "ArrowRight",
-    start: "Enter",
-    a: "KeyA",
-    b: "KeyS",
-    c: "KeyD",
-    x: "KeyQ",
-    y: "KeyW",
-    z: "KeyE",
-  },
-  player2: {
-    up: "KeyI",
-    down: "KeyK",
-    left: "KeyJ",
-    right: "KeyL",
-    start: "KeyH",
-    a: "KeyB",
-    b: "KeyN",
-    c: "KeyM",
-    x: "KeyU",
-    y: "KeyO",
-    z: "KeyP",
-  },
+  files: event.target.files,
   cbStarted: function cbStarted() {
-    console.log("Emulator started.")
+    pleaseWait.style.display = "none"
   },
 })
 ```
@@ -63,14 +32,7 @@ embedGenesis({
 | Parameter          |    Type     | Required | Default value | Description               |
 | :----------------- | :---------: | :------: | :-----------: | :------------------------ |
 | container          |   string    |   yes    |       –       | Target element ID.        |
-| name               |   string    |   yes    |       –       | Game name.                |
-| rom                | ArrayBuffer |   yes    |       –       | ROM file.                 |
-| showMobileControls |   boolean   |    no    |     false     | Shows mobile controls.    |
-| saveButtonText     |   string    |    no    |     SAVE      | Save Button Text.         |
-| loadButtonText     |   string    |    no    |     LOAD      | Load Button Text.         |
-| soundButtonText    |   string    |    no    |     SOUND     | Sound Button Text.        |
-| player1            |   object    |    no    |       –       | Player 1 keys.            |
-| player2            |   object    |    no    |       –       | Player 2 keys.            |
+| files              |   Array     |   yes    |       –       | Array of File or Blob (PK3 files and optional CFG file). |
 | cbStarted          |  function   |    no    |       -       | Called on emulator start. |
 
 ## Special keys:
