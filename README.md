@@ -29,20 +29,17 @@ embedQuake3({
 })
 ```
 
-| Parameter          |    Type     | Required | Default value | Description               |
-| :----------------- | :---------: | :------: | :-----------: | :------------------------ |
-| container          |   string    |   yes    |       –       | Target element ID.        |
-| files              |   Array     |   yes    |       –       | Files or Blobs (PK3s and q3config.cfg). |
-| cbStarted          |  function   |    no    |       -       | Called on emulator start. |
+| Parameter          |    Type     | Required | Description               |
+| :----------------- | :---------: | :------: | :------------------------ |
+| container          |   string    |   yes    | Target element ID.        |
+| files              |   Array     |   yes    | Files or Blobs (PK3s and q3config.cfg). |
+| cbStarted          |  function   |    no    | Called on emulator start. |
 
 ## Special keys:
 
 | Action          | macOS Shortcut | Windows Shortcut | Safari Shortcut |
 | :-------------- | :------------: | :--------------: | :-------------: |
-| Save state      |  Command + 1   |     Ctrl + 1     |    Ctrl + 1     |
-| Load state      |  Command + 2   |     Ctrl + 2     |    Ctrl + 2     |
-| Toggle sound    |  Command + 3   |     Ctrl + 3     |    Ctrl + 3     |
-| Fullscreen mode |  Command + F   |     Ctrl + F     |    Ctrl + F     |
+| Download q3config.cfg      |  Command + P   |     Ctrl + P     |    Ctrl + P     |
 
 ## Main differences with the original project:
 
