@@ -68,8 +68,7 @@
       -moz-user-select: none !important;
       -ms-user-select: none !important;
       user-select: none !important;
-      /* Remove cursor from here - it's set below */
-      cursor: url("https://raw.githubusercontent.com/ProjectIGIRemakeTeam/ProjectIGI/refs/heads/master/images/crosshair.png"), default !important;
+
     }
 
 
@@ -113,6 +112,8 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-image: url("https://cdn.sdappnet.cloud/rtx/images/ProjectIGI.png");
+      /* Remove cursor from here - it's set below */
+      cursor: url("https://raw.githubusercontent.com/ProjectIGIRemakeTeam/ProjectIGI/refs/heads/master/images/crosshair.png"), default !important;
     }
 
     #container {
@@ -121,32 +122,6 @@
 
     input[type=file] {
       display: none
-    }
-
-    #email {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      padding-right: 15px;
-      line-height: 3.2;
-      font-family: Arial;
-      font-size: 16px;
-      color: #fff;
-      user-select: none;
-      -webkit-user-select: none
-    }
-
-    #email a {
-      text-decoration: none;
-      color: #fff;
-      background-color: transparent;
-      border: 0;
-      outline: 0
-    }
-
-    #email a:focus {
-      text-decoration: none;
-      outline: 1px solid #fff
     }
 
     #demo-loader {
@@ -480,6 +455,7 @@
         preventClick = false; // Reset the flag for subsequent clicks
         return; // Prevent click event after a hold action
       }
+      if (container.style.display == "none") { return }
 
       if ((e.target.tagName === 'A') || (e.target.tagName === 'IMG')) {
         // Play Dragunov sound when clicking on <a> or <img> elements
@@ -502,6 +478,7 @@
 
     document.addEventListener('mousedown', (e) => {
       e.preventDefault(); // Prevent default action when holding
+      if (container.style.display == "none") { return }
 
       // Start a timer to detect a hold
       holdTimer = setTimeout(() => {
@@ -542,6 +519,7 @@
 
     // Core function to create bullet holes
     function createBulletHole(x, y, size) {
+      if (container.style.display == "none") { return }
       // Create an image element for the bullet hole
       const bulletHole = document.createElement('img');
       const randomNumber = Math.floor(Math.random() * 6) + 1; // Random number between 1 and 6
@@ -569,22 +547,6 @@
       }, 100);
     }
 
-    // Add this to your script section
-    document.addEventListener('DOMContentLoaded', function () {
-      // Set cursor for the entire document
-      document.documentElement.style.cursor = 'url("https://raw.githubusercontent.com/ProjectIGIRemakeTeam/ProjectIGI/refs/heads/master/images/crosshair.png"), default';
-
-      // Also set it for body as backup
-      document.body.style.cursor = 'url("https://raw.githubusercontent.com/ProjectIGIRemakeTeam/ProjectIGI/refs/heads/master/images/crosshair.png"), default';
-
-      // Make sure all elements inherit the cursor
-      const allElements = document.querySelectorAll('*');
-      allElements.forEach(el => {
-        if (el.tagName !== 'IMG' || !el.classList.contains('bullet-hole')) {
-          el.style.cursor = 'inherit';
-        }
-      });
-    });
   </script>
 </body>
 
