@@ -62,23 +62,62 @@
       -webkit-tap-highlight-color: transparent
     }
 
-    body,
-    body * {
-      user-select: none !important;
-      cursor: url("images/crosshair.png"), default !important;
-    }
-
+    /* Remove or modify these cursor rules from body */
     body {
       -webkit-user-select: none !important;
       -moz-user-select: none !important;
       -ms-user-select: none !important;
       user-select: none !important;
+      /* Remove cursor from here - it's set below */
+    }
+
+    /* Instead, set cursor for specific elements */
+    html,
+    body,
+    #game,
+    #container,
+    .demo-loader,
+    #file-selector,
+    .logo,
+    .pleasewait {
       cursor: url("images/crosshair.png"), default !important;
     }
 
+    /* Make sure bullet holes don't interfere with cursor */
+    .bullet-hole {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      pointer-events: none !important;
+      /* Important: don't capture mouse events */
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+    }
+
+    .hole-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      pointer-events: none !important;
+      /* Don't capture mouse events */
+      display: none;
+      z-index: 9998;
+      /* Lower than bullet holes */
+    }
+
+    .hole-effect.active {
+      display: block;
+    }
+
+    /* Ensure all interactive elements have the cursor */
+    button,
     a,
-    img {
-      cursor: url("images/crosshair.png"), default !important;
+    [tabindex] {
+      cursor: url("images/crosshair.png"), pointer !important;
     }
 
     .logo {
@@ -285,34 +324,6 @@
       to {
         opacity: 0
       }
-    }
-
-    .bullet-hole {
-      position: fixed;
-      /* Use 'fixed' to keep it in the same position relative to the viewport */
-      width: 15px;
-      height: 15px;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 1s ease-out;
-      /* Fade out effect */
-    }
-
-    .hole-effect {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      pointer-events: none;
-      display: none;
-      z-index: 9999;
-    }
-
-    .hole-effect.active {
-      display: block;
     }
   </style>
 </head>
